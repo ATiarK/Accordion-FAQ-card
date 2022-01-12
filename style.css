@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
-:root {
-    --textMain: hsl(238, 29%, 16%);
-    --textPrimary: hsl(237, 12%, 33%);
-    --textSecondary: hsl(240, 6%, 50%);
-    --textHover: hsl(14, 88%, 65%);
-    --separateColor: hsl(240, 5%, 98%);
-}
+
+/* Default Resolution HiDPI (1440 x 900) */
 
 *,
 *::before,
@@ -15,27 +10,29 @@
     box-sizing: inherit;
 }
 
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
 a,
 a:link,
 a:visited {
-    color: var(--textMain);
+    color: hsl(237, 12%, 33%);
 }
 
 a:hover {
-    color: var(--textHover);
+    color: hsl(14, 88%, 65%);
 }
 
 p {
-    color: var(--textSecondary);
-}
-
-a,
-p {
-    font-size: 12px;
+    color: hsl(240, 6%, 50%);
+    line-height: 1.2;
 }
 
 hr {
-    color: var(--separateColor);
+    color: hsl(240, 5%, 98%);
+    opacity: 30%;
 }
 
 body {
@@ -43,13 +40,14 @@ body {
     font-family: 'Kumbh Sans', sans-serif;
     margin: 0;
     padding: 0;
+    height: 46em;
 }
 
 .card-container {
     width: 1000px;
     background-color: #fff;
     border-radius: 25px;
-    margin: 20px auto;
+    margin: 10em auto;
     background-image: url(./images/bg-pattern-desktop.svg);
     background-repeat: no-repeat;
     background-position: left -505px top -275px;
@@ -58,10 +56,14 @@ body {
 }
 
 .leftPage {
-    padding: 150px 0;
+    padding: 130px 0;
     background-image: url(./images/illustration-woman-online-desktop.svg);
     background-repeat: no-repeat;
     background-position: left -80px top 50px;
+}
+
+.leftPage #mobile {
+    display: none;
 }
 
 #box {
@@ -71,8 +73,8 @@ body {
 }
 
 .rightPage {
-    margin: auto 50px auto 35px;
-    width: 450px;
+    margin: auto 50px auto 120px;
+    width: 330px;
 }
 
 .accordion-item {
@@ -104,11 +106,7 @@ body {
     height: 90%;
     top: 50%;
     left: 0;
-    transform: translateY((-50%));
-}
-
-.answer p {
-    color: var(--textSecondary);
+    transform: translateY(-50%);
 }
 
 .accordion-item:target .answer {
@@ -117,8 +115,93 @@ body {
 
 .accordion-item:target a {
     font-weight: bold;
+    color: hsl(238, 29%, 16%);
 }
 
 .accordion-item:target img {
     transform: rotate(180deg);
+}
+
+
+/* Resolution M DPI (1280 x 800) */
+
+@media screen and (max-width:1280px) {
+    body {
+        height: 100%;
+    }
+    .card-container {
+        width: 900px;
+        margin: 9em auto;
+    }
+    #box {
+        margin-right: 300px;
+    }
+    .rightPage {
+        margin: auto 50px auto 75px;
+        width: 330px;
+    }
+}
+
+
+/* More lower Resolutions below */
+
+@media screen and (max-width:1000px) {
+    .card-container {
+        width: 650px;
+        display: flex;
+        flex-flow: column;
+        margin: 15em auto 8em;
+        background-size: 400px;
+        background-position: top -220px left 125px;
+    }
+    .leftPage {
+        background-image: none;
+        padding-bottom: 3.5em;
+    }
+    .leftPage #mobile {
+        display: block;
+        width: 400px;
+        margin: -310px auto 20px;
+    }
+    .leftPage #box {
+        display: none;
+    }
+    .rightPage {
+        margin: 0 auto 4em;
+        width: 550px;
+    }
+    h1 {
+        text-align: center;
+    }
+    p {
+        line-height: 1.5;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .card-container {
+        width: 500px;
+        height: auto;
+        background-image: url(./images/bg-pattern-mobile.svg);
+        background-size: 350px;
+        background-repeat: no-repeat;
+        background-position: 70px 0;
+        margin: 13em auto;
+    }
+    .leftPage #mobile {
+        width: 350px;
+        margin: -285px auto 20px;
+    }
+    .rightPage {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width:525px) {
+    .card-container {
+        width: 450px;
+    }
+    .rightPage {
+        width: 380px;
+    }
 }
