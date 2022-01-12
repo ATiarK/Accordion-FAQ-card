@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+:root {
+    --textMain: hsl(238, 29%, 16%);
+    --textPrimary: hsl(237, 12%, 33%);
+    --textSecondary: hsl(240, 6%, 50%);
+    --textHover: hsl(14, 88%, 65%);
+    --separateColor: hsl(240, 5%, 98%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+a,
+a:link,
+a:visited {
+    color: var(--textMain);
+}
+
+a:hover {
+    color: var(--textHover);
+}
+
+p {
+    color: var(--textSecondary);
+}
+
+a,
+p {
+    font-size: 12px;
+}
+
+hr {
+    color: var(--separateColor);
+}
+
+body {
+    background: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    font-family: 'Kumbh Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.card-container {
+    width: 1000px;
+    background-color: #fff;
+    border-radius: 25px;
+    margin: 20px auto;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: left -505px top -275px;
+    background-size: 900px;
+    display: flex;
+}
+
+.leftPage {
+    padding: 150px 0;
+    background-image: url(./images/illustration-woman-online-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: left -80px top 50px;
+}
+
+#box {
+    margin-left: -92px;
+    margin-top: 40px;
+    margin-right: 320px;
+}
+
+.rightPage {
+    margin: auto 50px auto 35px;
+    width: 450px;
+}
+
+.accordion-item {
+    background-color: #fff;
+    border-radius: .4rem;
+}
+
+.accordion-link {
+    text-decoration: none;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 650ms;
+}
+
+.answer::before {
+    content: "";
+    position: absolute;
+    width: 0.6rem;
+    height: 90%;
+    top: 50%;
+    left: 0;
+    transform: translateY((-50%));
+}
+
+.answer p {
+    color: var(--textSecondary);
+}
+
+.accordion-item:target .answer {
+    max-height: 10rem;
+}
+
+.accordion-item:target a {
+    font-weight: bold;
+}
+
+.accordion-item:target img {
+    transform: rotate(180deg);
+}
