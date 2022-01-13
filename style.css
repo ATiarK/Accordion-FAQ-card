@@ -44,10 +44,10 @@ body {
 }
 
 .card-container {
-    width: 1000px;
+    width: 900px;
     background-color: #fff;
     border-radius: 25px;
-    margin: 10em auto;
+    margin: 9em auto;
     background-image: url(./images/bg-pattern-desktop.svg);
     background-repeat: no-repeat;
     background-position: left -505px top -275px;
@@ -73,7 +73,7 @@ body {
 }
 
 .rightPage {
-    margin: auto 50px auto 120px;
+    margin: auto 50px auto 75px;
     width: 330px;
 }
 
@@ -129,16 +129,8 @@ body {
     body {
         height: 100%;
     }
-    .card-container {
-        width: 900px;
-        margin: 9em auto;
-    }
     #box {
         margin-right: 300px;
-    }
-    .rightPage {
-        margin: auto 50px auto 75px;
-        width: 330px;
     }
 }
 
