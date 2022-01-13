@@ -138,6 +138,9 @@ body {
 /* More lower Resolutions below */
 
 @media screen and (max-width:1000px) {
+    body {
+        height: 68.4em;
+    }
     .card-container {
         width: 650px;
         display: flex;
@@ -171,6 +174,9 @@ body {
 }
 
 @media screen and (max-width:700px) {
+    body {
+        height: 70.4em;
+    }
     .card-container {
         width: 500px;
         height: auto;
